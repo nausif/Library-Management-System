@@ -1,0 +1,50 @@
+﻿@model Library_Management_System_By_Nausif_AND_Mohsin.Models.Publisher
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Publisher</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Publisher_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Publisher_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Publisher_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Publisher_Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.publisher_Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.publisher_Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Publisher_Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Publisher_Address)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Publisher_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

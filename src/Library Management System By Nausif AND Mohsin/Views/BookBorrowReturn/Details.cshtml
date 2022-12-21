@@ -1,0 +1,71 @@
+﻿@model Library_Management_System_By_Nausif_AND_Mohsin.Models.Book_Borrow_Return
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Book_Borrow_Return</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Borrow_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Borrow_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Return_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Return_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Due_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Due_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fine_Charge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fine_Charge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Book_Acc_Code1.Book_Acc_Code1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Book_Acc_Code1.Book_Acc_Code1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Member.Member_FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Member.Member_FirstName)
+        </dd>
+    </dl>
+    @using (Html.BeginForm())
+    {
+        
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Return" class="btn btn-default" />
+            </div>
+        </div>
+    }
+</div>

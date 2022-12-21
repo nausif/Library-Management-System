@@ -1,0 +1,86 @@
+﻿@model Library_Management_System_By_Nausif_AND_Mohsin.Models.Book_Borrow_Return
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Book_Borrow_Return</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.Book_Borrow_ID)
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Fine_Charge, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Fine_Charge)
+                @Html.ValidationMessageFor(model => model.Fine_Charge)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Borrow_Date, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Borrow_Date, new { Value = Model.Borrow_Date.ToString("dd-MM-yyyy"), @readonly = "readonly" })
+                
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Return_Date, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Return_Date, new { Value = Model.Return_Date.HasValue ? Model.Return_Date.Value.ToString("dd-MM-yyyy"):null, @readonly = "readonly" })
+                @Html.ValidationMessageFor(model => model.Return_Date)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Due_Date, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Due_Date, new { Value = Model.Due_Date.ToString("dd-MM-yyyy"), @readonly = "readonly" })
+               
+            </div>
+        </div>
+
+        
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Book_Acc_Code, "Book Accession", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => Model.Book_Acc_Code, new { @readonly = "readonly" })
+                @Html.ValidationMessageFor(model => model.Book_Acc_Code)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Member_ID, "Member ID", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Member_ID, new { @readonly = "readonly" })
+                @Html.ValidationMessageFor(model => model.Member_ID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+    
+

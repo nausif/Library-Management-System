@@ -1,0 +1,44 @@
+﻿@model Library_Management_System_By_Nausif_AND_Mohsin.Models.Book_Author
+
+@{
+    ViewBag.Title = "Add_Author";
+}
+
+<h2>Add_Author</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Book_Author</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ISBN, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.ISBN, (SelectList)ViewBag.isbn, "Select ISBN", new { required = "required" })
+                @Html.ValidationMessageFor(model => model.ISBN)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Author_ID, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Author_ID, (SelectList)ViewBag.author, "Select Author", new { required = "required" })
+                @Html.ValidationMessageFor(model => model.Author_ID)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

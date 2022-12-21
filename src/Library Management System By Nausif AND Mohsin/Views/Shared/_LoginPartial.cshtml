@@ -1,0 +1,109 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Session["Loginaccess"] == "ok")
+{
+    <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu">
+                    <li class="header">Library Menu</li>
+                    <li class="treeview">
+                        <a href="~/Home/Dashboard">
+                            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                        </a>
+                        
+                    </li>
+                    <li class="treeview">
+                        <a href="~/BookBorrowReturn">
+                            <i class="fa fa-exchange"></i>
+                            <span>Book Borrow Return</span>
+                        </a>
+
+                    </li>
+                    <li class="treeview">
+                        <a href="~/Publisher">
+                            <i class="fa fa-fw fa-user-plus"></i>
+                            <span>Publishers</span>
+                        </a>
+                        
+                    </li>
+                    <li>
+                        <a href="~/Author">
+                            <i class="fa fa-fw fa-user-plus"></i> <span>Authors</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="~/Category">
+                            <i class="fa fa-list-ol"></i>
+                            <span>Categories</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-book"></i>
+                            <span>Book</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="~/Book"><i class="fa fa-circle-o"></i>Books</a></li>
+                            <li><a href="~/BookEdition"><i class="fa fa-circle-o"></i>Books Editions</a></li>
+                            <li><a href="~/BookAuthor"><i class="fa fa-circle-o"></i>Books Authors</a></li>
+                            <li><a href="~/BookAccession"><i class="fa fa-circle-o"></i>Book Accessions</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-fw fa-group"></i>
+                            <span>Members</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="~/MemberType"><i class="fa fa-circle-o"></i>Member Types</a></li>
+                            <li><a href="~/Member"><i class="fa fa-circle-o"></i>Members</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="header">Reports</li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-file-pdf-o"></i> <span>Get Report</span> <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>@Html.ActionLink("Member Report","Report1","Report")</li>
+                            <li>@Html.ActionLink("Borrow Return Report", "Report2", "Report")</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+}
+else
+{
+    <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu">
+                    <li class="header">Member Panel</li>
+                    <li class="treeview">
+                        <a href="~/SearchBooks/Search">
+                            <i class="fa fa-book"></i>
+                            <span>Search Book</span>
+                        </a>
+                        </li>
+                        <li class="treeview">
+                            <a href="~/MemberHistory/History">
+                                <i class="fa fa-exchange"></i>
+                                <span>My Borrow Return History</span>
+                            </a>
+
+                    </li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+}

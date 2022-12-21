@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="22fa92a615514da88ca77da8afcad2f3" Name="Diagram1">
+        <EntityTypeShape EntityType="LMSModel.Author" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSModel.Book" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSModel.Book_Acc_Code" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSModel.Book_Borrow_Return" Width="1.5" PointX="9.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSModel.Book_Edition" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSModel.Category" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSModel.Member" Width="1.5" PointX="7.5" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSModel.Member_Type" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSModel.Publisher" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <AssociationConnector Association="LMSModel.FK_Book_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="LMSModel.FK_Book_Edition_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="LMSModel.FK_Book_Acc_Code_Book_Edition" ManuallyRouted="false" />
+        <AssociationConnector Association="LMSModel.FK_Book_Borrow_Return_Book_Acc_Code" ManuallyRouted="false" />
+        <AssociationConnector Association="LMSModel.FK_Book_Borrow_Return_Member" ManuallyRouted="false" />
+        <AssociationConnector Association="LMSModel.FK_Book_Edition_Publisher" ManuallyRouted="false" />
+        <AssociationConnector Association="LMSModel.FK_Member_Member_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="LMSModel.Book_Author" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

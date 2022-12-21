@@ -1,0 +1,115 @@
+﻿@model Library_Management_System_By_Nausif_AND_Mohsin.Models.Member
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Member</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Member_FirstName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Member_FirstName)
+                @Html.ValidationMessageFor(model => model.Member_FirstName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Member_LastName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Member_LastName)
+                @Html.ValidationMessageFor(model => model.Member_LastName)
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.Member_Type_ID, "Member_Type_ID", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Member_Type_ID", String.Empty)
+                @Html.ValidationMessageFor(model => model.Member_Type_ID)
+            </div>
+        </div>*@
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Member_Password, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Member_Password)
+                @Html.ValidationMessageFor(model => model.Member_Password)
+            </div>
+        </div>
+
+        
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Member_Address, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Member_Address)
+                @Html.ValidationMessageFor(model => model.Member_Address)
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.Member_Registered_Date, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Member_Registered_Date)
+                @Html.ValidationMessageFor(model => model.Member_Registered_Date)
+            </div>
+        </div>*@
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Member_Phone, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Member_Phone)
+                @Html.ValidationMessageFor(model => model.Member_Phone)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Member_Email, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Member_Email)
+                @Html.ValidationMessageFor(model => model.Member_Email)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Member_Gender, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.RadioButtonFor(model => model.Member_Gender, "Male") @Html.Label("MALE") &nbsp&nbsp
+                @Html.RadioButtonFor(model => model.Member_Gender, "Female") @Html.Label("FEMALE")
+                @Html.ValidationMessageFor(model => model.Member_Gender)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Member_DOB, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Member_DOB)
+                @Html.ValidationMessageFor(model => model.Member_DOB)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+    
+

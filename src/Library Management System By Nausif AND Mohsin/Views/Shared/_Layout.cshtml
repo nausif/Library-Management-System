@@ -1,0 +1,242 @@
+﻿
+<!-- DEFAULT LAYOUT OF VER -->
+@*<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", null, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>*@
+ 
+
+<!----------------------------------------------NEW LAYOUT-------------------------------------------------------->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Library Management System By Nausif</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="~/Content/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Content//dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="~/Content//dist/css/skins/_all-skins.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <!-- Site wrapper -->
+    <div class="wrapper">
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="~/Home/DashBoard" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>LMS</b></span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>NAUSIF LIBRARY</b></span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="hidden-xs">Welcome, @Session["loginname"]</span>
+                            </a>
+                            <ul class="dropdown-menu" style="width: 0;">
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    
+                                    <div class="pull-right">
+                                        <a style="width: 134px;" href="~/UserAccount/UserLogin" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Control Sidebar Toggle Button -->
+                        
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- =============================================== -->
+        <!-- Left side column. contains the sidebar -->
+        @*<aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel -->
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu">
+                    <li class="header">Library Menu</li>
+                    <li class="treeview">
+                        <a href="~/Home/Dashboard">
+                            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                        </a>
+                        
+                    </li>
+                    <li class="treeview">
+                        <a href="~/BookBorrowReturn">
+                            <i class="fa fa-exchange"></i>
+                            <span>Book Borrow Return</span>
+                        </a>
+
+                    </li>
+                    <li class="treeview">
+                        <a href="~/Publisher">
+                            <i class="fa fa-fw fa-user-plus"></i>
+                            <span>Publishers</span>
+                        </a>
+                        
+                    </li>
+                    <li>
+                        <a href="~/Author">
+                            <i class="fa fa-fw fa-user-plus"></i> <span>Authors</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="~/Category">
+                            <i class="fa fa-list-ol"></i>
+                            <span>Categories</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-book"></i>
+                            <span>Book</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="~/Book"><i class="fa fa-circle-o"></i>Books</a></li>
+                            <li><a href="~/BookEdition"><i class="fa fa-circle-o"></i>Books Editions</a></li>
+                            <li><a href="~/BookAuthor"><i class="fa fa-circle-o"></i>Books Authors</a></li>
+                            <li><a href="~/BookAccession"><i class="fa fa-circle-o"></i>Book Accessions</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-fw fa-group"></i>
+                            <span>Members</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="~/MemberType"><i class="fa fa-circle-o"></i>Member Types</a></li>
+                            <li><a href="~/Member"><i class="fa fa-circle-o"></i>Members</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="header">Reports</li>
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-file-pdf-o"></i> <span>Get Report</span> <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>@Html.ActionLink("Member Report","Report1","Report")</li>
+                            <li>@Html.ActionLink("Borrow Return Report", "Report2", "Report")</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <!-- /.sidebar -->
+        </aside>*@
+        @Html.Partial("_LoginPartial")
+        <!-- =============================================== -->
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1 style="font-size:40px; text-align:center;">
+                    @ViewBag.Title
+                </h1>
+            </section>
+            <!-- Main content -->
+            <section class="content">
+                <!-- Default box -->
+                <div class="box">
+                    
+                    <div class="box-body" style="padding: 30px;">
+                        @RenderBody()
+                    </div><!-- /.box-body -->
+                    
+                </div><!-- /.box -->
+            </section><!-- /.content -->
+        </div><!-- /.content-wrapper -->
+        </div>
+        <footer class="main-footer" style="text-align:center;">
+            
+                Copyright &copy; @DateTime.Now.Year &nbsp;&nbsp;<strong>LIBRARY MANAGEMENT SYSTEM BY Nausif & Mohsin.</strong>&nbsp;&nbsp;  All rights reserved.
+        </footer>
+        
+<!----------------------------------------------END LAYOUT-------------------------------------------------------->
+
+    <!-- jQuery 2.1.4 -->
+    <script src="~/Content/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="~/Content/bootstrap/js/bootstrap.min.js"></script>
+    <!-- SlimScroll -->
+    <script src="~/Content/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="~/Content/plugins/fastclick/fastclick.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/Content//dist/js/app.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/Content//dist/js/demo.js"></script></body>
+</html>

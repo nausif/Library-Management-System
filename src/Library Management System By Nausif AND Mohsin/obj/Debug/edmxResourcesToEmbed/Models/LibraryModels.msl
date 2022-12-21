@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LMSModelStoreContainer" CdmEntityContainer="LMSEntities">
+    <EntitySetMapping Name="Authors">
+      <EntityTypeMapping TypeName="LMSModel.Author">
+        <MappingFragment StoreEntitySet="Author">
+          <ScalarProperty Name="Author_ID" ColumnName="Author_ID" />
+          <ScalarProperty Name="Author_Name" ColumnName="Author_Name" />
+          <ScalarProperty Name="Author_Email" ColumnName="Author_Email" />
+          <ScalarProperty Name="Author_Phone" ColumnName="Author_Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Books">
+      <EntityTypeMapping TypeName="LMSModel.Book">
+        <MappingFragment StoreEntitySet="Book">
+          <ScalarProperty Name="Book_ID" ColumnName="Book_ID" />
+          <ScalarProperty Name="Book_Title" ColumnName="Book_Title" />
+          <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Book_Acc_Code">
+      <EntityTypeMapping TypeName="LMSModel.Book_Acc_Code">
+        <MappingFragment StoreEntitySet="Book_Acc_Code">
+          <ScalarProperty Name="Book_Acc_Code1" ColumnName="Book_Acc_Code" />
+          <ScalarProperty Name="Book_ISBN" ColumnName="Book_ISBN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Book_Borrow_Return">
+      <EntityTypeMapping TypeName="LMSModel.Book_Borrow_Return">
+        <MappingFragment StoreEntitySet="Book_Borrow_Return">
+          <ScalarProperty Name="Book_Borrow_ID" ColumnName="Book_Borrow_ID" />
+          <ScalarProperty Name="Borrow_Date" ColumnName="Borrow_Date" />
+          <ScalarProperty Name="Return_Date" ColumnName="Return_Date" />
+          <ScalarProperty Name="Due_Date" ColumnName="Due_Date" />
+          <ScalarProperty Name="Fine_Charge" ColumnName="Fine_Charge" />
+          <ScalarProperty Name="Book_Acc_Code" ColumnName="Book_Acc_Code" />
+          <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Book_Edition">
+      <EntityTypeMapping TypeName="LMSModel.Book_Edition">
+        <MappingFragment StoreEntitySet="Book_Edition">
+          <ScalarProperty Name="Book_ISBN" ColumnName="Book_ISBN" />
+          <ScalarProperty Name="Book_ID" ColumnName="Book_ID" />
+          <ScalarProperty Name="Book_Published_Date" ColumnName="Book_Published_Date" />
+          <ScalarProperty Name="Book_Price" ColumnName="Book_Price" />
+          <ScalarProperty Name="Publisher_ID" ColumnName="Publisher_ID" />
+          <ScalarProperty Name="Book_Edition1" ColumnName="Book_Edition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="LMSModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+          <ScalarProperty Name="Category_Name" ColumnName="Category_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Members">
+      <EntityTypeMapping TypeName="LMSModel.Member">
+        <MappingFragment StoreEntitySet="Member">
+          <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+          <ScalarProperty Name="Member_FirstName" ColumnName="Member_FirstName" />
+          <ScalarProperty Name="Member_LastName" ColumnName="Member_LastName" />
+          <ScalarProperty Name="Member_Type_ID" ColumnName="Member_Type_ID" />
+          <ScalarProperty Name="Member_Password" ColumnName="Member_Password" />
+          <ScalarProperty Name="Member_Address" ColumnName="Member_Address" />
+          <ScalarProperty Name="Member_Registered_Date" ColumnName="Member_Registered_Date" />
+          <ScalarProperty Name="Member_Phone" ColumnName="Member_Phone" />
+          <ScalarProperty Name="Member_Email" ColumnName="Member_Email" />
+          <ScalarProperty Name="Member_Gender" ColumnName="Member_Gender" />
+          <ScalarProperty Name="Member_DOB" ColumnName="Member_DOB" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Member_Type">
+      <EntityTypeMapping TypeName="LMSModel.Member_Type">
+        <MappingFragment StoreEntitySet="Member_Type">
+          <ScalarProperty Name="Member_Type_ID" ColumnName="Member_Type_ID" />
+          <ScalarProperty Name="Member_Type_Name" ColumnName="Member_Type_Name" />
+          <ScalarProperty Name="Member_Discount" ColumnName="Member_Discount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Publishers">
+      <EntityTypeMapping TypeName="LMSModel.Publisher">
+        <MappingFragment StoreEntitySet="Publisher">
+          <ScalarProperty Name="Publisher_ID" ColumnName="Publisher_ID" />
+          <ScalarProperty Name="Publisher_Name" ColumnName="Publisher_Name" />
+          <ScalarProperty Name="Publisher_Email" ColumnName="Publisher_Email" />
+          <ScalarProperty Name="publisher_Phone" ColumnName="publisher_Phone" />
+          <ScalarProperty Name="Publisher_Address" ColumnName="Publisher_Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Book_Author" TypeName="LMSModel.Book_Author" StoreEntitySet="Book_Author">
+      <EndProperty Name="Author">
+        <ScalarProperty Name="Author_ID" ColumnName="Author_ID" />
+      </EndProperty>
+      <EndProperty Name="Book_Edition">
+        <ScalarProperty Name="Book_ISBN" ColumnName="Book_ISBN" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

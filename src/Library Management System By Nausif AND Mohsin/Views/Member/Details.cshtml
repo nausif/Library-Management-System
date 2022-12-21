@@ -1,0 +1,98 @@
+﻿@model Library_Management_System_By_Nausif_AND_Mohsin.Models.Member
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Member</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Member_FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Member_FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Member_LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Member_LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Member_Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Member_Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Member_Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Member_Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Member_Registered_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Member_Registered_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Member_Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Member_Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Member_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Member_Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Member_Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Member_Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Member_DOB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Member_DOB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Member_Type.Member_Type_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Member_Type.Member_Type_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Member_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
